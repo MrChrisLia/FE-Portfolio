@@ -163,14 +163,6 @@ h1 {
     padding-right: 220px;
   }
   
-
-#description {
-    text-align: left;
-    margin-left: 10%;
-    max-width: 70%;
-    padding-right: 220px;
-  }
-
 ::-webkit-scrollbar {
 width: 8px;
 }
@@ -187,8 +179,37 @@ border-radius: 20px;
 #security-img {
     width: 200px;
     vertical-align: middle;
-    float: right;
-    position: absolute;
+    float:right;
     right:20%;
     bottom: 30%;
-} 
+}
+
+#description {
+    text-align: left;
+    margin-left: 10%;
+    max-width: 70%;
+    padding-right: 25%;
+  }
+
+
+.fullscreen {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 24px;
+  }
+@media only screen and (max-width: 768px) {
+    .fullscreen {
+      font-size: 12px;
+      padding: 10px;
+    }
+    h1 {
+        font-size: 18px !important;
+    }
+    #security-img {
+        width: 100%;
+        max-width: 100px; /* optional, add a maximum width for the image */
+        height: auto; /* set the height to auto to maintain aspect ratio */
+    }
+  }
