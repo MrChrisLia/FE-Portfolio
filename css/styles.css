@@ -145,15 +145,18 @@ button:hover {
 
 #h7Button {
 background-color: #2196F3;
+margin-bottom: 10px;
 }
 
 #luantaButton {
 background-color: #FF9800;
+margin-bottom: 10px;
 }
 
 #hessButton {
 background-color: yellow;
 color: black;
+margin-bottom: 10px;
 }
 
 h1 {
@@ -211,5 +214,6 @@ border-radius: 20px;
         width: 100%;
         max-width: 100px; /* optional, add a maximum width for the image */
         height: auto; /* set the height to auto to maintain aspect ratio */
+
     }
   }
