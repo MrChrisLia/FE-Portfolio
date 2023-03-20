@@ -28,6 +28,10 @@ const h7button = document.querySelector('#h7Button');
 const luantaaButton = document.querySelector('#luantaButton');
 const hesssButton = document.querySelector('#hessButton');
 
+const now = document.querySelector('#now');
+
+const city = document.querySelector('#city');
+
 toggleSwitch.addEventListener('change', function() {
     const label = document.querySelector('.toggle-switch-label');
     if (this.checked) {
@@ -52,6 +56,8 @@ toggleSwitch.addEventListener('change', function() {
       h7Button.textContent = '了解一下';
       luantaaButton.textContent = '了解一下';
       hesssButton.textContent = '了解一下';
+      now.textContent = '2022 - 現在';
+      city.textContent = '台灣台北市'
     } else {
       label.textContent = '中文';
       navbarBrand.textContent = 'My Portfolio';
@@ -74,5 +80,7 @@ toggleSwitch.addEventListener('change', function() {
       h7Button.textContent = "Learn About My Role";
       luantaaButton.textContent = "Learn About My Role";
       hesssButton.textContent = 'Learn About My Role';
+      now.textContent = '2022 - Now';
+      city.textContent = 'Taipei, Taiwan';
     }
   });
