@@ -31,7 +31,7 @@ const hesssButton = document.querySelector('#hessButton');
 toggleSwitch.addEventListener('change', function() {
     const label = document.querySelector('.toggle-switch-label');
     if (this.checked) {
-      label.textContent = '中文';
+      label.textContent = 'EN';
       navbarBrand.textContent = '我的履歷';
       skillsLink.textContent = '技能';
       experienceLink.textContent = '經驗';
@@ -53,7 +53,7 @@ toggleSwitch.addEventListener('change', function() {
       luantaaButton.textContent = '了解一下';
       hesssButton.textContent = '了解一下';
     } else {
-      label.textContent = 'EN';
+      label.textContent = '中文';
       navbarBrand.textContent = 'My Portfolio';
       skillsLink.textContent = 'Skills';
       experienceLink.textContent = 'Experience';

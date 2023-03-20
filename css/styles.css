@@ -276,7 +276,7 @@ input:checked + .slider:before {
 .toggle-switch-label {
   position: absolute;
   display: block;
-  transform: translate(50%, -90%);
+  transform: translate(20%, -90%);
   font-size: 12px;
   color: black;
   transition: all 0.2s ease-in-out;
@@ -289,5 +289,5 @@ input:checked + .slider:before {
 }
 
 input:checked + .slider ~ .toggle-switch-label {
-  left: calc(23% + 5px);
+  left: calc(45% + 5px);
 }
