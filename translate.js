@@ -32,6 +32,11 @@ const now = document.querySelector('#now');
 
 const city = document.querySelector('#city');
 
+const roleAtH7 = document.querySelector('#roleAtH7');
+const roleAtLuanta = document.querySelector('#roleAtLuanta');
+const roleAtHess = document.querySelector('#roleAtHess');
+
+
 toggleSwitch.addEventListener('change', function() {
     const label = document.querySelector('.toggle-switch-label');
     if (this.checked) {
@@ -58,6 +63,9 @@ toggleSwitch.addEventListener('change', function() {
       hesssButton.textContent = '了解一下';
       now.textContent = '2022 - 現在';
       city.textContent = '台灣台北市'
+      roleAtH7.textContent = '資安工程師 @ 禾新';
+      roleAtLuanta.textContent = 'IT 系統工程師 @ 倫塔';
+      roleAtHess.textContent = '英文老師 @ 何嘉仁';
     } else {
       label.textContent = '中文';
       navbarBrand.textContent = 'My Portfolio';
@@ -77,10 +85,13 @@ toggleSwitch.addEventListener('change', function() {
       certifications.textContent = 'Certifications';
       education.textContent = 'Education';
       contact.textContent = "Let's Link Up";
-      h7Button.textContent = "Learn About My Role";
-      luantaaButton.textContent = "Learn About My Role";
-      hesssButton.textContent = 'Learn About My Role';
+      h7Button.textContent = "About My Role";
+      luantaaButton.textContent = "About My Role";
+      hesssButton.textContent = 'About My Role';
       now.textContent = '2022 - Now';
       city.textContent = 'Taipei, Taiwan';
+      roleAtH7.textContent = 'Web Security Engineer @ Hiero7';
+      roleAtLuanta.textContent = 'IT Systems Engineer @ Luanta';
+      roleAtHess.textContent = 'English Instructor @ HESS';
     }
   });

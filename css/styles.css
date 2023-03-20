@@ -291,3 +291,26 @@ input:checked + .slider:before {
 input:checked + .slider ~ .toggle-switch-label {
   left: calc(-30% + 5px);
 }
+
+
+.ctf-icons {
+  width: 50%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 50%;
+}
+
+.ctf-icons:hover {
+  animation: wiggle 0.3s;
+}
+
+.thm-icons {
+  width: 80%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 50%;
+}
+
+.thm-icons:hover {
+  animation: wiggle 0.3s;
+}
