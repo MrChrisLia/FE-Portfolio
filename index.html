@@ -12,34 +12,39 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">My Portfolio</a>
+            <a class="navbar-brand" href="#">My Portfolio</a>          
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+                <label class="toggle-switch-label">EN</label>
+            </label>   
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
+                        <a class="nav-link" id="skills-link" href="#skills">Skills</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#experience">Experience</a>
+                        <a class="nav-link" id="experience-link" href="#experience">Experience</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#certifications">Certifications</a>
+                        <a class="nav-link" id="certifications-link" href="#certifications">Certifications</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#education">Education</a>
+                        <a class="nav-link" id="education-link" href="#education">Education</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link" id="contact-link" href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="fullscreen text-center" style="margin-top: 10%; margin-bottom: 15%; max-width: 70%;">
-        <h1>I'm Chris,</h1>
-        <h1>a Security Engineer.</h1>
+        <h1 id="myName">I'm Chris,</h1>
+        <h1 id="myRole">a Security Engineer.</h1>
         <img src="https://cdn-icons-png.flaticon.com/512/6783/6783360.png" alt="security-icon" id="security-img">
         <p id="description">As an experienced offensive security professional, I possess a deep understanding of the latest attack techniques and tools used by cybercriminals. I am skilled in performing ethical hacking, penetration testing, and vulnerability assessments to identify and exploit weaknesses in computer systems and networks. </p>
     </div>
@@ -48,12 +53,12 @@
     <div class="text-center">
         <h2 id="skills">Skills</h2>
         <div class="row justify-content-start">
-            <div class="col-lg3 col-md-4 col-sm-6">Penetration Testing <br> <img class="skill-icons" src="https://ianisbernard.com/img/logo-pentest.svg" alt="penetration-test"></div>
-            <div class="col-lg3 col-md-4 col-sm-6">Web Application Firewalls <br> <img class="skill-icons" src="https://icon-library.com/images/web-application-firewall-icon/web-application-firewall-icon-20.jpg" alt="WAF"></div>
-            <div class="col-lg3 col-md-4 col-sm-6">Vulnerablity Scanners <br> <img class="skill-icons" src="https://www.kindpng.com/picc/m/651-6512864_managed-vulnerability-scanning-intrusion-prevention-system-icon-hd.png" alt="vuln-scanner"></div>
-            <div class="col-lg3 col-md-4 col-sm-6">Python <br> <img class="skill-icons" src="https://img.freepik.com/free-icon/snakes_318-368381.jpg" alt="python"></div>
-            <div class="col-lg3 col-md-4 col-sm-6">JavaScript <br> <img class="skill-icons" src="https://www.freepnglogos.com/uploads/javascript-png/logo-html5-js-css3-png-transparent-logo-4.png" alt="javascript"></div>
-            <div class="col-lg3 col-md-4 col-sm-6">Kali Linux <br> <img class="skill-icons" src="https://files.cults3d.com/uploaders/13889723/illustration-file/88f914f9-4ec0-4d0c-8ebb-5edc51f4b3cd/kali_linux.jpg" alt="kali-linux"></div>
+            <div class="col-lg3 col-md-4 col-sm-6"><p id="pentest">Penetration Testing</p><img class="skill-icons" src="https://ianisbernard.com/img/logo-pentest.svg" alt="penetration-test"></div>
+            <div class="col-lg3 col-md-4 col-sm-6"><p id="webfirewalls">Web Application Firewalls</p><img class="skill-icons" src="https://icon-library.com/images/web-application-firewall-icon/web-application-firewall-icon-20.jpg" alt="WAF"></div>
+            <div class="col-lg3 col-md-4 col-sm-6"><p id="vulnscanners">Vulnerability Scanners</p><img class="skill-icons" src="https://www.kindpng.com/picc/m/651-6512864_managed-vulnerability-scanning-intrusion-prevention-system-icon-hd.png" alt="vuln-scanner"></div>
+            <div class="col-lg3 col-md-4 col-sm-6"><p>Python</p><img class="skill-icons" src="https://img.freepik.com/free-icon/snakes_318-368381.jpg" alt="python"></div>
+            <div class="col-lg3 col-md-4 col-sm-6"><p>JavaScript</p><img class="skill-icons" src="https://www.freepnglogos.com/uploads/javascript-png/logo-html5-js-css3-png-transparent-logo-4.png" alt="javascript"></div>
+            <div class="col-lg3 col-md-4 col-sm-6"><p>Kali Linux</p><img class="skill-icons" src="https://files.cults3d.com/uploaders/13889723/illustration-file/88f914f9-4ec0-4d0c-8ebb-5edc51f4b3cd/kali_linux.jpg" alt="kali-linux"></div>
         </div>
     </div>
     <hr>
@@ -93,7 +98,7 @@
         <div class="row">
             <div class="col-lg3 col-md-4 col-sm-6">2020 - 2021 <br> <img class="wgu-icons" src="https://media.badgr.com/uploads/issuers/issuer_logo_fd8b9520-765e-410e-8455-5dd0912d4c94.png" alt="wgu"> <br> Western Governor's University <br> Masters of Cybersecurity and Information Assurance</div>
             <div class="col-lg3 col-md-4 col-sm-6">2014 - 2017 <br> <img class="edu-icons" src="https://www.nicepng.com/png/detail/271-2714239_117-odu-old-dominion-monarchs-logo.png" alt="odu"> <br> Old Dominion University <br> Asian Studies</div>
-            <div class="col-lg3 col-md-4 col-sm-6"> 2016, 2018 <br> <img class="edu-icons" src="https://www.wearefreemovers.com/wp-content/uploads/2020/10/National-Taiwan-Normal-University-logo.png" alt="ntnu"> <br> National Taiwan Normal University <br> Traditional Chinese Language</div>
+            <div class="col-lg3 col-md-4 col-sm-6"> 2016, 2018 <br> <img class="edu-icons" src="https://www.wearefreemovers.com/wp-content/uploads/2020/10/National-Taiwan-Normal-University-logo.png" alt="ntnu"> <br> National Taiwan Normal University <br> Traditional Mandarin Chinese Language</div>
         </div>
     </div>
     <hr>
@@ -108,5 +113,6 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="index.js"></script>
+    <script src="translate.js"></script> 
 </body>
 </html>
