@@ -26,22 +26,22 @@ const translations = {
         roleAtLuanta:           'IT Systems Engineer @ Luanta Limited',
         roleAtHess:             'English Instructor @ HESS',
         h7Text: `<ul>
-            <li>☑️ Perform web penetration tests and deliver detailed vulnerability reports to engineering teams.</li>
-            <li>☑️ Manage and tune a Web Application Firewall, reducing false positives across customer web properties.</li>
-            <li>☑️ Operate a vulnerability scanner — validate, triage, and escalate critical findings.</li>
-            <li>☑️ Collaborate with the SOC team during active security incidents and threat investigations.</li>
+            <li><span class="chk">✓</span>Perform web penetration tests and deliver detailed vulnerability reports to engineering teams.</li>
+            <li><span class="chk">✓</span>Manage and tune a Web Application Firewall, reducing false positives across customer web properties.</li>
+            <li><span class="chk">✓</span>Operate a vulnerability scanner — validate, triage, and escalate critical findings.</li>
+            <li><span class="chk">✓</span>Collaborate with the SOC team during active security incidents and threat investigations.</li>
         </ul>`,
         luantaText: `<ul>
-            <li>☑️ Monitored production server health and availability in a 24/7 NOC environment.</li>
-            <li>☑️ Conducted Tier 1 incident triage on server anomalies, escalating critical issues to senior engineers.</li>
-            <li>☑️ Provided first-line technical support for customers and internal product teams.</li>
-            <li>☑️ Maintained thorough incident logs and shift handover documentation.</li>
+            <li><span class="chk">✓</span>Monitored production server health and availability in a 24/7 NOC environment.</li>
+            <li><span class="chk">✓</span>Conducted Tier 1 incident triage on server anomalies, escalating critical issues to senior engineers.</li>
+            <li><span class="chk">✓</span>Provided first-line technical support for customers and internal product teams.</li>
+            <li><span class="chk">✓</span>Maintained thorough incident logs and shift handover documentation.</li>
         </ul>`,
         hessText: `<ul>
-            <li>☑️ Delivered English instruction to students ages 2–15 across multiple proficiency levels.</li>
-            <li>☑️ Prepared students for international English exams and overseas school admissions.</li>
-            <li>☑️ Organized annual school events and built strong teacher-student-parent relationships.</li>
-            <li>☑️ Developed customized lesson plans aligned with individual student learning goals.</li>
+            <li><span class="chk">✓</span>Delivered English instruction to students ages 2–15 across multiple proficiency levels.</li>
+            <li><span class="chk">✓</span>Prepared students for international English exams and overseas school admissions.</li>
+            <li><span class="chk">✓</span>Organized annual school events and built strong teacher-student-parent relationships.</li>
+            <li><span class="chk">✓</span>Developed customized lesson plans aligned with individual student learning goals.</li>
         </ul>`,
     },
     zh: {
@@ -71,22 +71,22 @@ const translations = {
         roleAtLuanta:           'IT 系統工程師 @ 倫塔',
         roleAtHess:             '英文老師 @ 何嘉仁',
         h7Text: `<ul>
-            <li>☑️ 執行網頁滲透測試，並向工程團隊提交詳細的漏洞報告。</li>
-            <li>☑️ 管理與調校網站應用程式防火牆，降低客戶網站誤判率。</li>
-            <li>☑️ 操作弱點掃描器，驗證、分類並升級關鍵漏洞。</li>
-            <li>☑️ 在資安事件與威脅調查期間，與 SOC 團隊協作。</li>
+            <li><span class="chk">✓</span>執行網頁滲透測試，並向工程團隊提交詳細的漏洞報告。</li>
+            <li><span class="chk">✓</span>管理與調校網站應用程式防火牆，降低客戶網站誤判率。</li>
+            <li><span class="chk">✓</span>操作弱點掃描器，驗證、分類並升級關鍵漏洞。</li>
+            <li><span class="chk">✓</span>在資安事件與威脅調查期間，與 SOC 團隊協作。</li>
         </ul>`,
         luantaText: `<ul>
-            <li>☑️ 在 24/7 NOC 環境中監控生產伺服器健康狀況與可用性。</li>
-            <li>☑️ 對伺服器異常進行第一層事件分類，並將重大問題升級至資深工程師。</li>
-            <li>☑️ 為客戶及內部產品團隊提供第一線技術支援。</li>
-            <li>☑️ 維護完整的事件記錄與交接文件。</li>
+            <li><span class="chk">✓</span>在 24/7 NOC 環境中監控生產伺服器健康狀況與可用性。</li>
+            <li><span class="chk">✓</span>對伺服器異常進行第一層事件分類，並將重大問題升級至資深工程師。</li>
+            <li><span class="chk">✓</span>為客戶及內部產品團隊提供第一線技術支援。</li>
+            <li><span class="chk">✓</span>維護完整的事件記錄與交接文件。</li>
         </ul>`,
         hessText: `<ul>
-            <li>☑️ 為 2 至 15 歲不同程度的學生提供英語教學。</li>
-            <li>☑️ 協助學生準備國際英語考試及海外學校入學。</li>
-            <li>☑️ 籌辦年度學校活動，建立良好的師生與親師關係。</li>
-            <li>☑️ 根據個別學生學習目標，制定客製化教學計畫。</li>
+            <li><span class="chk">✓</span>為 2 至 15 歲不同程度的學生提供英語教學。</li>
+            <li><span class="chk">✓</span>協助學生準備國際英語考試及海外學校入學。</li>
+            <li><span class="chk">✓</span>籌辦年度學校活動，建立良好的師生與親師關係。</li>
+            <li><span class="chk">✓</span>根據個別學生學習目標，制定客製化教學計畫。</li>
         </ul>`,
     },
     ja: {
@@ -116,22 +116,22 @@ const translations = {
         roleAtLuanta:           'ITシステムエンジニア @ Luanta Limited',
         roleAtHess:             '英語講師 @ HESS',
         h7Text: `<ul>
-            <li>☑️ ウェブペネトレーションテストを実施し、エンジニアリングチームへ詳細な脆弱性レポートを提出。</li>
-            <li>☑️ WAFの管理・チューニングを行い、顧客Webサービス全体の誤検知を削減。</li>
-            <li>☑️ 脆弱性スキャナーを運用し、重要な発見事項を検証・トリアージ・エスカレーション。</li>
-            <li>☑️ アクティブなセキュリティインシデントおよび脅威調査においてSOCチームと連携。</li>
+            <li><span class="chk">✓</span>ウェブペネトレーションテストを実施し、エンジニアリングチームへ詳細な脆弱性レポートを提出。</li>
+            <li><span class="chk">✓</span>WAFの管理・チューニングを行い、顧客Webサービス全体の誤検知を削減。</li>
+            <li><span class="chk">✓</span>脆弱性スキャナーを運用し、重要な発見事項を検証・トリアージ・エスカレーション。</li>
+            <li><span class="chk">✓</span>アクティブなセキュリティインシデントおよび脅威調査においてSOCチームと連携。</li>
         </ul>`,
         luantaText: `<ul>
-            <li>☑️ 24時間365日のNOC環境において、本番サーバーの健全性と可用性を監視。</li>
-            <li>☑️ サーバー異常に対するTier 1インシデントトリアージを実施し、重大な問題をシニアエンジニアへエスカレーション。</li>
-            <li>☑️ 顧客および社内製品チームへの一次技術サポートを提供。</li>
-            <li>☑️ インシデントログおよびシフト引き継ぎ文書を適切に管理・維持。</li>
+            <li><span class="chk">✓</span>24時間365日のNOC環境において、本番サーバーの健全性と可用性を監視。</li>
+            <li><span class="chk">✓</span>サーバー異常に対するTier 1インシデントトリアージを実施し、重大な問題をシニアエンジニアへエスカレーション。</li>
+            <li><span class="chk">✓</span>顧客および社内製品チームへの一次技術サポートを提供。</li>
+            <li><span class="chk">✓</span>インシデントログおよびシフト引き継ぎ文書を適切に管理・維持。</li>
         </ul>`,
         hessText: `<ul>
-            <li>☑️ 2歳から15歳まで、さまざまな習熟度の生徒に英語指導を実施。</li>
-            <li>☑️ 国際英語試験および海外学校入学に向けた生徒指導を担当。</li>
-            <li>☑️ 年間学校行事を企画・運営し、教師・生徒・保護者との良好な関係を構築。</li>
-            <li>☑️ 生徒個人の学習目標に合わせたカスタマイズされた授業計画を作成。</li>
+            <li><span class="chk">✓</span>2歳から15歳まで、さまざまな習熟度の生徒に英語指導を実施。</li>
+            <li><span class="chk">✓</span>国際英語試験および海外学校入学に向けた生徒指導を担当。</li>
+            <li><span class="chk">✓</span>年間学校行事を企画・運営し、教師・生徒・保護者との良好な関係を構築。</li>
+            <li><span class="chk">✓</span>生徒個人の学習目標に合わせたカスタマイズされた授業計画を作成。</li>
         </ul>`,
     },
 };
