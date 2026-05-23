@@ -1,97 +1,193 @@
-const toggleSwitch = document.querySelector('.switch input[type="checkbox"]');
-const navbarBrand = document.querySelector('.navbar-brand');
+const translations = {
+    en: {
+        brand:                  'Christopher Lia',
+        'skills-link':          'Skills',
+        'experience-link':      'Experience',
+        'certifications-link':  'Certifications',
+        'education-link':       'Education',
+        'contact-link':         'Contact',
+        myName:                 "I'm Chris,",
+        myRole:                 'a Security Engineer.',
+        description:            "OSCP-certified security engineer specializing in web penetration testing, WAF management, and vulnerability research. Experienced across HackTheBox, TryHackMe, and Offensive Security's Proving Grounds. Based across APAC regions.",
+        skills:                 'Skills',
+        pentest:                'Penetration Testing',
+        webfirewalls:           'Web Application Firewalls',
+        vulnscanners:           'Vulnerability Scanners',
+        experience:             'Experience',
+        certifications:         'Certifications',
+        education:              'Education',
+        contact:                "Let's Link Up",
+        h7Button:               'About My Role',
+        luantaButton:           'About My Role',
+        hessButton:             'About My Role',
+        now:                    '2022 – Now',
+        city:                   'APAC regions',
+        roleAtH7:               'Web Security Engineer @ Hiero7',
+        roleAtLuanta:           'IT Systems Engineer @ Luanta Limited',
+        roleAtHess:             'English Instructor @ HESS',
+        h7Text: `<ul>
+            <li>☑️ Perform web penetration tests and deliver detailed vulnerability reports to engineering teams.</li>
+            <li>☑️ Manage and tune a Web Application Firewall, reducing false positives across customer web properties.</li>
+            <li>☑️ Operate a vulnerability scanner — validate, triage, and escalate critical findings.</li>
+            <li>☑️ Collaborate with the SOC team during active security incidents and threat investigations.</li>
+        </ul>`,
+        luantaText: `<ul>
+            <li>☑️ Monitored production server health and availability in a 24/7 NOC environment.</li>
+            <li>☑️ Conducted Tier 1 incident triage on server anomalies, escalating critical issues to senior engineers.</li>
+            <li>☑️ Provided first-line technical support for customers and internal product teams.</li>
+            <li>☑️ Maintained thorough incident logs and shift handover documentation.</li>
+        </ul>`,
+        hessText: `<ul>
+            <li>☑️ Delivered English instruction to students ages 2–15 across multiple proficiency levels.</li>
+            <li>☑️ Prepared students for international English exams and overseas school admissions.</li>
+            <li>☑️ Organized annual school events and built strong teacher-student-parent relationships.</li>
+            <li>☑️ Developed customized lesson plans aligned with individual student learning goals.</li>
+        </ul>`,
+    },
+    zh: {
+        brand:                  '我的履歷',
+        'skills-link':          '技能',
+        'experience-link':      '經驗',
+        'certifications-link':  '證書',
+        'education-link':       '教育',
+        'contact-link':         '聯絡',
+        myName:                 '我是Chris,',
+        myRole:                 '資安工程師。',
+        description:            'OSCP認證資安工程師，專注於網頁滲透測試、WAF管理與漏洞研究。在HackTheBox、TryHackMe及Proving Grounds具備實戰經驗。活躍於亞太地區。',
+        skills:                 '技能',
+        pentest:                '滲透測試',
+        webfirewalls:           '網站應用程式防火牆',
+        vulnscanners:           '弱點掃描器',
+        experience:             '工作經驗',
+        certifications:         '證書',
+        education:              '教育背景',
+        contact:                '聯絡我',
+        h7Button:               '了解一下',
+        luantaButton:           '了解一下',
+        hessButton:             '了解一下',
+        now:                    '2022 - 現在',
+        city:                   '亞太地區',
+        roleAtH7:               '資安工程師 @ 禾新',
+        roleAtLuanta:           'IT 系統工程師 @ 倫塔',
+        roleAtHess:             '英文老師 @ 何嘉仁',
+        h7Text: `<ul>
+            <li>☑️ 執行網頁滲透測試，並向工程團隊提交詳細的漏洞報告。</li>
+            <li>☑️ 管理與調校網站應用程式防火牆，降低客戶網站誤判率。</li>
+            <li>☑️ 操作弱點掃描器，驗證、分類並升級關鍵漏洞。</li>
+            <li>☑️ 在資安事件與威脅調查期間，與 SOC 團隊協作。</li>
+        </ul>`,
+        luantaText: `<ul>
+            <li>☑️ 在 24/7 NOC 環境中監控生產伺服器健康狀況與可用性。</li>
+            <li>☑️ 對伺服器異常進行第一層事件分類，並將重大問題升級至資深工程師。</li>
+            <li>☑️ 為客戶及內部產品團隊提供第一線技術支援。</li>
+            <li>☑️ 維護完整的事件記錄與交接文件。</li>
+        </ul>`,
+        hessText: `<ul>
+            <li>☑️ 為 2 至 15 歲不同程度的學生提供英語教學。</li>
+            <li>☑️ 協助學生準備國際英語考試及海外學校入學。</li>
+            <li>☑️ 籌辦年度學校活動，建立良好的師生與親師關係。</li>
+            <li>☑️ 根據個別學生學習目標，制定客製化教學計畫。</li>
+        </ul>`,
+    },
+    ja: {
+        brand:                  'ポートフォリオ',
+        'skills-link':          'スキル',
+        'experience-link':      '経験',
+        'certifications-link':  '資格',
+        'education-link':       '学歴',
+        'contact-link':         '連絡先',
+        myName:                 'クリスです、',
+        myRole:                 'セキュリティエンジニア。',
+        description:            'OSCP認定セキュリティエンジニアとして、ウェブペネトレーションテスト・WAF管理・脆弱性調査を専門としています。HackTheBox・TryHackMe・Proving Groundsでの実践経験があります。APACリージョンを拠点に活動中。',
+        skills:                 'スキル',
+        pentest:                'ペネトレーションテスト',
+        webfirewalls:           'ウェブアプリファイアウォール',
+        vulnscanners:           '脆弱性スキャナー',
+        experience:             '職務経歴',
+        certifications:         '資格',
+        education:              '学歴',
+        contact:                'お問い合わせ',
+        h7Button:               '詳細を見る',
+        luantaButton:           '詳細を見る',
+        hessButton:             '詳細を見る',
+        now:                    '2022年 – 現在',
+        city:                   'APACリージョン',
+        roleAtH7:               'ウェブセキュリティエンジニア @ Hiero7',
+        roleAtLuanta:           'ITシステムエンジニア @ Luanta Limited',
+        roleAtHess:             '英語講師 @ HESS',
+        h7Text: `<ul>
+            <li>☑️ ウェブペネトレーションテストを実施し、エンジニアリングチームへ詳細な脆弱性レポートを提出。</li>
+            <li>☑️ WAFの管理・チューニングを行い、顧客Webサービス全体の誤検知を削減。</li>
+            <li>☑️ 脆弱性スキャナーを運用し、重要な発見事項を検証・トリアージ・エスカレーション。</li>
+            <li>☑️ アクティブなセキュリティインシデントおよび脅威調査においてSOCチームと連携。</li>
+        </ul>`,
+        luantaText: `<ul>
+            <li>☑️ 24時間365日のNOC環境において、本番サーバーの健全性と可用性を監視。</li>
+            <li>☑️ サーバー異常に対するTier 1インシデントトリアージを実施し、重大な問題をシニアエンジニアへエスカレーション。</li>
+            <li>☑️ 顧客および社内製品チームへの一次技術サポートを提供。</li>
+            <li>☑️ インシデントログおよびシフト引き継ぎ文書を適切に管理・維持。</li>
+        </ul>`,
+        hessText: `<ul>
+            <li>☑️ 2歳から15歳まで、さまざまな習熟度の生徒に英語指導を実施。</li>
+            <li>☑️ 国際英語試験および海外学校入学に向けた生徒指導を担当。</li>
+            <li>☑️ 年間学校行事を企画・運営し、教師・生徒・保護者との良好な関係を構築。</li>
+            <li>☑️ 生徒個人の学習目標に合わせたカスタマイズされた授業計画を作成。</li>
+        </ul>`,
+    },
+};
 
-const skillsLink = document.querySelector('#skills-link');
-const experienceLink = document.querySelector('#experience-link');
-const certificationsLink = document.querySelector('#certifications-link');
-const educationLink = document.querySelector('#education-link');
-const contactLink = document.querySelector('#contact-link');
+// Map translation key → CSS selector (text-only fields)
+const selectors = {
+    brand:                  '.navbar-brand',
+    'skills-link':          '#skills-link',
+    'experience-link':      '#experience-link',
+    'certifications-link':  '#certifications-link',
+    'education-link':       '#education-link',
+    'contact-link':         '#contact-link',
+    myName:                 '#myName',
+    myRole:                 '#myRole',
+    description:            '#description',
+    skills:                 '#skills',
+    pentest:                '#pentest',
+    webfirewalls:           '#webfirewalls',
+    vulnscanners:           '#vulnscanners',
+    experience:             '#experience',
+    certifications:         '#certifications',
+    education:              '#education',
+    contact:                '#contact',
+    h7Button:               '#h7Button',
+    luantaButton:           '#luantaButton',
+    hessButton:             '#hessButton',
+    now:                    '#now',
+    city:                   '#city',
+    roleAtH7:               '#roleAtH7',
+    roleAtLuanta:           '#roleAtLuanta',
+    roleAtHess:             '#roleAtHess',
+};
 
-const myName = document.querySelector('#myName');
-const myRole = document.querySelector('#myRole');
-const description = document.querySelector('#description');
+let currentLang = 'en';
 
-const skills = document.querySelector('#skills');
-const pentest = document.querySelector('#pentest');
-const webfirewalls = document.querySelector('#webfirewalls');
-const vulnscanners = document.querySelector('#vulnscanners');
+function applyLang(lang) {
+    const t = translations[lang];
 
-const experience = document.querySelector('#experience');
-
-const certifications = document.querySelector('#certifications');
-
-const education = document.querySelector('#education');
-
-const contact = document.querySelector('#contact');
-
-const h7button = document.querySelector('#h7Button');
-const luantaaButton = document.querySelector('#luantaButton');
-const hesssButton = document.querySelector('#hessButton');
-
-const now = document.querySelector('#now');
-
-const city = document.querySelector('#city');
-
-const roleAtH7 = document.querySelector('#roleAtH7');
-const roleAtLuanta = document.querySelector('#roleAtLuanta');
-const roleAtHess = document.querySelector('#roleAtHess');
-
-
-toggleSwitch.addEventListener('change', function() {
-    const label = document.querySelector('.toggle-switch-label');
-    if (this.checked) {
-      label.textContent = 'EN';
-      navbarBrand.textContent = '我的履歷';
-      skillsLink.textContent = '技能';
-      experienceLink.textContent = '經驗';
-      certificationsLink.textContent = '證書';
-      educationLink.textContent = '教育';
-      contactLink.textContent = '聯絡';
-      myName.textContent = '我是Chris,';
-      myRole.textContent = '資安工程師。';
-      description.textContent = '作為一位資深的攻擊性安全專家，我具備深入了解網路犯罪分子所使用的最新攻擊技術和工具的能力。我擅長進行道德駭客、滲透測試和漏洞評估，以識別和利用計算機系統和網絡中的弱點。';
-      skills.textContent = '技能';
-      pentest.textContent = '滲透測試';
-      webfirewalls.textContent = '網站應用程式防火牆';
-      vulnscanners.textContent = '弱點掃描';
-      experience.textContent = '經驗';
-      certifications.textContent = '證書';
-      education.textContent = '教育';
-      contact.textContent = '聯絡';
-      h7Button.textContent = '了解一下';
-      luantaaButton.textContent = '了解一下';
-      hesssButton.textContent = '了解一下';
-      now.textContent = '2022 - 現在';
-      city.textContent = '台灣台北市'
-      roleAtH7.textContent = '資安工程師 @ 禾新';
-      roleAtLuanta.textContent = 'IT 系統工程師 @ 倫塔';
-      roleAtHess.textContent = '英文老師 @ 何嘉仁';
-    } else {
-      label.textContent = '中文';
-      navbarBrand.textContent = 'My Portfolio';
-      skillsLink.textContent = 'Skills';
-      experienceLink.textContent = 'Experience';
-      certificationsLink.textContent = 'Certifications';
-      educationLink.textContent = 'Education';
-      contactLink.textContent = 'Contact';
-      myName.textContent = "I'm Chris,";
-      myRole.textContent = 'a Security Engineer';
-      description.textContent = 'As an experienced offensive security professional, I possess a deep understanding of the latest attack techniques and tools used by cybercriminals. I am skilled in performing ethical hacking, penetration testing, and vulnerability assessments to identify and exploit weaknesses in computer systems and networks.'
-      skills.textContent = 'Skills';
-      pentest.textContent = 'Penetration Testing';
-      webfirewalls.textContent = 'Web Application Firewalls';
-      vulnscanners.textContent = 'Vulnerability Scanners';
-      experience.textContent = 'Experience';
-      certifications.textContent = 'Certifications';
-      education.textContent = 'Education';
-      contact.textContent = "Let's Link Up";
-      h7Button.textContent = "About My Role";
-      luantaaButton.textContent = "About My Role";
-      hesssButton.textContent = 'About My Role';
-      now.textContent = '2022 - Now';
-      city.textContent = 'Taipei, Taiwan';
-      roleAtH7.textContent = 'Web Security Engineer @ Hiero7';
-      roleAtLuanta.textContent = 'IT Systems Engineer @ Luanta';
-      roleAtHess.textContent = 'English Instructor @ HESS';
+    for (const [key, selector] of Object.entries(selectors)) {
+        const el = document.querySelector(selector);
+        if (el && t[key] !== undefined) el.textContent = t[key];
     }
-  });
+
+    // Re-render any open experience panel in the new language
+    ['h7Text', 'luantaText', 'hessText'].forEach(key => {
+        const el = document.getElementById(key);
+        if (el && el.style.display === 'block') el.innerHTML = t[key];
+    });
+
+    document.querySelectorAll('.lang-btn').forEach(btn =>
+        btn.classList.toggle('active', btn.dataset.lang === lang)
+    );
+    document.documentElement.lang = { zh: 'zh-TW', ja: 'ja' }[lang] ?? 'en';
+    currentLang = lang;
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn =>
+    btn.addEventListener('click', () => applyLang(btn.dataset.lang))
+);

@@ -1,50 +1,87 @@
-const h7Button = document.getElementById("h7Button");
-const h7Element = document.getElementById("h7Text");
-let isH7TextVisible = false;
+function initInfiniteCarousel({ grid, btnLeft, btnRight, scrollAmt, speed }) {
+    const origCards = Array.from(grid.children);
+    origCards.slice().reverse().forEach(c => grid.prepend(c.cloneNode(true)));
+    origCards.forEach(c => grid.append(c.cloneNode(true)));
 
+    const setWidth = grid.scrollWidth / 3;
+    grid.scrollLeft = setWidth;
 
-const luantaButton = document.getElementById("luantaButton");
-const luantaElement = document.getElementById("luantaText");
-let isLuantaTextVisible = false;
+    let rafId;
+    let animating = false; // true during button click smooth scroll
 
-
-const hessButton = document.getElementById("hessButton");
-const hessElement = document.getElementById("hessText");
-let isHessTextVisible = false;
-
-h7Button.addEventListener("click", () => {
-  if (isH7TextVisible) {
-    h7Element.style.display = "none";
-    isH7TextVisible = false;
-  } else {
-    const text = "<ul><li>☑️ Manage a Web Vulnerabilitiy Scanner and confirm potential vulnerabilities. </li><li>☑️ Manage an Web Application Firewall.</li> <li>☑️ Perform web penetration tests to to find potential vulnerabilities.</li><li>☑️ Work with the SOC team during investigations</li></ul>";
-    h7Element.innerHTML = text;
-    h7Element.style.display = "block";
-    isH7TextVisible = true;
-  }
-});
-
-
-luantaButton.addEventListener("click", () => {
-    if (isLuantaTextVisible) {
-        luantaElement.style.display = "none";
-        isLuantaTextVisible = false;
-    } else {
-        const text = "<ul><li>☑️ Monitor server system health. </li><li>☑️ Provide tier 1 investigations on servers.</li> <li>☑️ Act as first line customer and product support.</li><li>☑️ Work in a 24/7 shift schedule.</li></ul>";
-        luantaElement.innerHTML = text;
-        luantaElement.style.display = "block";
-        isLuantaTextVisible = true;
+    function reposition() {
+        const cur = grid.scrollLeft;
+        if (cur >= setWidth * 2) grid.scrollLeft -= setWidth;
+        else if (cur < setWidth)  grid.scrollLeft += setWidth;
     }
+
+    function tick() {
+        if (!animating) {
+            grid.scrollLeft += speed;
+            reposition();
+        }
+        rafId = requestAnimationFrame(tick);
+    }
+
+    rafId = requestAnimationFrame(tick);
+
+    grid.addEventListener('mouseenter', () => cancelAnimationFrame(rafId));
+    grid.addEventListener('mouseleave', () => { rafId = requestAnimationFrame(tick); });
+
+    function smoothScrollBy(delta) {
+        animating = true;
+        reposition();
+        const start = grid.scrollLeft;
+        const duration = 420;
+        const t0 = performance.now();
+
+        function step(now) {
+            const p = Math.min((now - t0) / duration, 1);
+            const ease = p < 0.5 ? 2*p*p : -1 + (4 - 2*p)*p;
+            grid.scrollLeft = start + delta * ease;
+            if (p < 1) {
+                requestAnimationFrame(step);
+            } else {
+                reposition();
+                animating = false;
+            }
+        }
+        requestAnimationFrame(step);
+    }
+
+    btnLeft.addEventListener('click',  () => smoothScrollBy(-scrollAmt));
+    btnRight.addEventListener('click', () => smoothScrollBy(scrollAmt));
+}
+
+initInfiniteCarousel({
+    grid:      document.getElementById('certsGrid'),
+    btnLeft:   document.getElementById('certLeft'),
+    btnRight:  document.getElementById('certRight'),
+    scrollAmt: 340,
+    speed:     0.5,
 });
 
-hessButton.addEventListener("click", () => {
-if (isHessTextVisible) {
-    hessElement.style.display = "none";
-    isHessTextVisible = false;
-} else {
-    const text = "<ul><li>☑️ Instruct students aging from 2 to 15 in English language. </li><li>☑️ Plan yearly events.</li> <li>☑️ Prepare students to take English exams for overseas school admission.</li><li>☑️ Manage Teacher-Student-Parent relations.</li></ul>";
-    hessElement.innerHTML = text;
-    hessElement.style.display = "block";
-    isHessTextVisible = true;
-}
+initInfiniteCarousel({
+    grid:      document.getElementById('skillsGrid'),
+    btnLeft:   document.getElementById('skillLeft'),
+    btnRight:  document.getElementById('skillRight'),
+    scrollAmt: 200,
+    speed:     0.6,
+});
+
+const panels = [
+    { button: document.getElementById('h7Button'),     content: document.getElementById('h7Text'),     key: 'h7Text' },
+    { button: document.getElementById('luantaButton'), content: document.getElementById('luantaText'), key: 'luantaText' },
+    { button: document.getElementById('hessButton'),   content: document.getElementById('hessText'),   key: 'hessText' },
+];
+
+panels.forEach(panel => {
+    panel.button.addEventListener('click', () => {
+        const isOpen = panel.content.style.display === 'block';
+        panels.forEach(p => { p.content.style.display = 'none'; });
+        if (!isOpen) {
+            panel.content.innerHTML = translations[currentLang][panel.key];
+            panel.content.style.display = 'block';
+        }
+    });
 });
