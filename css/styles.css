@@ -370,6 +370,10 @@ body {
 .ctf-card {
     padding: 1.1rem 1rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .ctf-card:hover { transform: translateY(-6px); }
@@ -418,13 +422,19 @@ body {
     align-items: start;
 }
 
-.exp-card { padding: 1.1rem 1.25rem; }
+.exp-card {
+    padding: 1.1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .exp-header {
     display: flex;
     align-items: center;
     gap: 1rem;
     margin-bottom: 1.25rem;
+    width: 100%;
 }
 
 .exp-logo {
@@ -521,6 +531,10 @@ body {
     padding: 0.9rem 0.75rem;
     text-align: center;
     flex: 0 0 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .cert-card:hover { transform: translateY(-6px); }
@@ -589,6 +603,10 @@ body {
 .edu-card {
     padding: 1.1rem 1.25rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .edu-card:hover { transform: translateY(-4px); }
@@ -651,7 +669,10 @@ body {
     text-align: center;
     text-decoration: none;
     color: #fff;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .contact-card:hover {
